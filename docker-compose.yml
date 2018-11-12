@@ -1,6 +1,7 @@
 mysql:
   build: .
-  dockerfile: Dockerfile-MySQL
+  container_name: mysql-mecab
+  dockerfile: Dockerfile
   environment:
     MYSQL_ROOT_PASSWORD: root        #rootユーザ用のパスワード
     MYSQL_USER: user                 #作業ユーザ名
@@ -8,5 +9,3 @@ mysql:
     TZ: "Asia/Tokyo"
   ports:
     - 3306:3306
-volumes:
-    - ./db:/var/lib/mysql
