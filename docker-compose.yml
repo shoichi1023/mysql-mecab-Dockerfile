@@ -1,6 +1,6 @@
 mysql:
   build: .
-  container_name: mysql-mecab
+  container_name: mysql-mecab-parser
   dockerfile: Dockerfile
   environment:
     MYSQL_ROOT_PASSWORD: root        #rootユーザ用のパスワード

@@ -18,7 +18,7 @@ RUN apt-get update \
     && sed -e 's#debian#mecab-ipadic-neologd#' ./mecabrc > /etc/mecabrc \
     && rm mecabrc \
     && cd /etc/mysql \
-    && echo "character-set-server=utf8mb4" >> my.cnf \
+    && echo "character-set-server=utf8mb4\ndefault_authentication_plugin= mysql_native_password" >> my.cnf \
     && echo "# mecab\nloose-mecab-rc-file=/etc/mecabrc\ninnodb_ft_min_token_size=1" >> my.cnf \
     && echo "[client]\ndefault-character-set=utf8mb4" >> my.cnf \
     && echo "INSTALL PLUGIN mecab SONAME 'libpluginmecab.so';" > /docker-entrypoint-initdb.d/1_install_mecab_plugin.sql \
